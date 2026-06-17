@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h1>🕵️ Secret Agent Registration Form</h1>
+    <p><i>Welcome, Agent Candidate! Complete the form below to apply for Shadow Force Intelligence Agency. Only the most skilled and intelligent agents will be selected.</i></p>
+    <form>
+        <fieldset>
+            <legend>Agent Identity</legend>
+            <label for="agentName">Agent Name:</label>
+            <input type="text" id="agentname" name="agentName" placeholder="Enter your agent name" required><br><br>
+            <label for="secretcodename">Secret Code Name:</label>
+            <input type="text" id="secretcodename" name="secretCodename" placeholder="Enter your secret code name" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Mission Profile</legend>
+            <label for="gender">Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="M" required> Male<br>
+            <input type="radio" id="female" name="gender" value="F" required> Female<br>
+            <input type="radio" id="other" name="gender" value="O" required> Other<br><br>
+            <label for="missionPreference">Mission Preference:</label><br>
+            <input type="checkbox" id="undercover" name="missionPreference" value="Undercover">Undercover Mission 🕶️<br>
+            <input type="checkbox" id="assassination" name="missionPreference" value="Assassination"> Assassination<br>
+            <input type="checkbox" id="cybersecurity" name="missionPreference" value="Cyber Security">Cyber Security 💻<br><br>
+            <input type="checkbox" id="intelligence" name="missionPreference" value="Intelligence">Intelligence Gathering 📡<br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Skills & Expertise</legend>
+            <label for="skills">Select your skills:</label><br>
+            <select id="skills" name="skills" multiple required>
+                <option value="combat">Combat Training 🥋</option>
+                <option value="espionage">Espionage 🕵️‍♂️</option>
+                <option value="hacking">Hacking 💻</option>
+                <option value="languages">Languages 🌐</option>
+                <option value="survival">Survival Skills 🏕️</option>
+                <option value="hacking">Hacking 💻</option>
+                <option value="disguise">Disguise 🕵️</option>
+            </select><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Agent Report</legend>
+            <label for="report">Provide a brief report about your previous missions:</label><br>
+            <textarea id="report" name="report" rows="4" cols="50" placeholder="Enter your report here..."></textarea><br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Agent ID</legend>
+            <label for="agentId">Agent ID:</label>
+            <input type="text" id="agentId" name="agentId" placeholder="Enter your agent ID" required><br><br>
+            <label for="agentRank">Agent Rank Applying For:</label>
+            <input type="checkbox" id="agentRank" name="agentRank" value="Agent" required>Rookie Agent<br><br>
+            <input type="checkbox" id="agentRank" name="agentRank" value="Senior Agent" required>Master Spy<br><br>
+            <input type="checkbox" id="agentRank" name="agentRank" value="Elite Agent" required>Elite Agent<br><br>
+        </fieldset>
+        <i>⚠️ Warning: False information may result in immediate rejection from the agency.</i>
+        <button type="submit">Submit Application</button>
+        <button type="reset">Reset Form</button>
+    </form>
+</body>
+</html>
