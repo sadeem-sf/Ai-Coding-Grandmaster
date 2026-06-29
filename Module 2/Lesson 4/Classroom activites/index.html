@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Advenced Selecters</title>
+    <style>
+        h1,p{
+            background-color: #ffe0b2;
+        }
+        ul > li{
+            background-color: #ffe0b2;
+        }
+        ul li:nth-child(3){
+            background-color:darkorange;
+        }
+        #fahhh::first-letter{
+            font-size: 200%;
+            color: red;
+        }
+        a:hover{
+            background-color: #ffccb2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Food Menu</h1>
+    <p>Pick your favourite dish and dig in</p>
+    <ul>
+        <li>Pizza</li>
+        <li>Burger</li>
+        <li>Tacos - Chef's special</li>
+        <li>Noodles</li>
+        <li>Garlic Bread</li>
+    </ul>
+    <p id="fahhh">Every dish on this menu is made with love</p>
+    <button style="background-color: white;"><a href="">Order Now</a></button>
+</body>
+</html>
