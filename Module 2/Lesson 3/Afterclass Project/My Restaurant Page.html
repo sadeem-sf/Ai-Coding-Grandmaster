@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Card</title>
+    <style>
+        body{
+                font-family:'Poppins',sans-serif;
+                background-image:url("fruit.jpg");
+                background-size:cover;
+                background-position:center;
+                background-attachment:fixed;
+            }
+        .menu-card{
+            width: 750px;
+            margin: 40px auto;
+            background:rgba(255,250,243,.95);
+             backdrop-filter:blur(2px);
+            padding: 40px;
+            border:3px solid #7a5c3d;
+            border-radius: 35px;
+            position: relative;
+            box-shadow: 0px 15px 35px rgba(0,0,0,.18);
+        }
+        .menu-card::before{
+            content: "";
+            position: absolute;
+            top: 12px;
+            bottom: 12px;
+            right: 12px;
+            left: 12px;
+            border: 2px solid #555;
+            border-radius: 28px;
+            pointer-events: none;
+        }
+        header{
+            text-align: center;
+        }
+        section:hover{
+            transform: scale(1.02);
+            transition: 3s;
+        }
+    h1{
+        font-size:65px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        margin-bottom: 5px;
+        font-family:'Cormorant Garamond', serif;
+        font-weight:700;
+        color:#556b2f;
+        text-shadow:2px 2px 5px rgba(0,0,0,.15);
+    }
+    header p{
+        font-style: italic;
+        font-size: 18px;
+        margin: 3px;
+        color:#7d6245;
+        letter-spacing:1px;
+    }
+    hr{
+        border: 0;
+        margin: 20px 0;
+        height: 2px;
+        background:linear-gradient(to right,transparent,#b8860b,transparent);
+    }
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+        margin-top: 30px;
+    }
+    h2{
+        background:#6a7d47;
+        color:white;
+        padding:8px;
+        border-radius:20px;
+        display:block;
+        text-align:center;
+        width:70%;
+        margin:auto;
+        margin-bottom:20px;
+        font-size:24px;
+        text-decoration:none;
+    }
+    .item{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+        font-weight: bold;
+        color: #4b3832;
+        padding-bottom:6px;
+        border-bottom:1px dotted #ccb68a;
+    }
+    .description{
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-indent: 20px;
+        color: #555;
+    }
+    .menu-card::after{
+        content:"❦";
+        position:absolute;
+        top:20px;
+        right:25px;
+        font-size:28px;
+        color: #556b2f;
+    }
+    .appetizers, .main-course, .drinks, .desserts{
+        padding:20px;
+        border:2px solid #d8c8aa;
+        border-radius:20px;
+        background:#fffdf8;
+        box-shadow:0 5px 12px rgba(0,0,0,.08);
+    }
+    footer{
+        text-align:center;
+        margin-top:30px;
+        color:#6b4d2e;
+        font-style:italic;
+        line-height:1.8;
+    }
+    .price{
+    color:#b8860b;
+    font-size:18px;
+    }
+    .appetizers{
+    background:#fff8ee;
+}
+
+.main-course{
+    background:#fdf9f2;
+}
+
+.drinks{
+    background:#f9fff6;
+}
+
+.desserts{
+    background:#fff9fb;
+}
+    .description{
+        font-style:italic;
+        line-height:1.6;
+        color: #777;
+    }
+    </style>
+</head>
+<body>
+    <div class="menu-card">
+        <header>
+            <h1>🌿Olive Garden🌿</h1>
+            <p>🍁Fine Dining Restaurant</p>
+            <p>🥬Serving Since 1995</p>
+            <p>🍀Fresh & Delicious</p>
+        </header><hr>
+        <main>
+            <section class="appetizers">
+                <h2>🍽 APPETIZERS</h2>
+                <div class="item">
+                    <span>Garlic Bread</span>
+                    <span class="price">5$</span>
+                </div>
+                <p class="description">Served warm with garlic butter</p>
+                <div class="item">
+                    <span>Soup</span>
+                    <span class="price">7$</span>
+                </div>
+                <p class="description">Creamy mushroom soup</p>
+                <div class="item">
+                    <span>Stuffed Mushrooms</span>
+                    <span class="price">4$</span>
+                </div>
+                <p class="description">Dive into the world of mushroom with our stuffed mushrroms   </p>
+            </section>
+            <section class="main-course">
+                <h2>🍝 MAIN COURSE</h2>
+                <div class="item">
+                    <span>Margherita Pizza</span>
+                    <span class="price">15$</span>
+                </div>
+                <p class="description">Fresh mozzarella with basil leaves.</p>
+                <div class="item">
+                    <span>Spaghetti Bolognese</span>
+                    <span class="price">11.20$</span>
+                </div>
+                <p class="description">Delicious pasta with rich meat sauce.</p>
+                <div class="item">
+                    <span>Caesar Salad</span>
+                    <span class="price">8$</span>
+                </div>
+                <p class="description">Crisp romaine lettuce with Caesar dressing.</p>
+                <div class="item">
+                    <span>Lasagna</span>
+                    <span class="price">12$</span>
+                </div>
+                <p class="description">Layered pasta with rich meat sauce.</p>
+            </section>
+            <section class="drinks">
+                <h2>🥤 DRINKS</h2>
+                <div class="item">
+                    <span>Cold Coffee</span>
+                    <span class="price">3.80$</span>
+                </div>
+                <div class="item">
+                    <span>Hot Coffee</span>
+                    <span class="price">3.50$</span>
+                </div>
+                <div class="item">
+                    <span>Fresh Lime Soda</span>
+                    <span class="price">2$</span>
+                </div>
+                <div class="item">
+                    <span>Cappuccino</span>
+                    <span class="price">5$</span>
+                </div>
+                <div class="item">
+                    <span>Fresh Orange Juice</span>
+                    <span class="price">4.50$</span>
+                </div>
+                <div class="item">
+                    <span>Mint Mojito</span>
+                    <span class="price">2.30$</span>
+                </div>
+
+            </section>
+            <section class="desserts">
+                <h2>🍰 DESSERTS</h2>
+                <div class="item">
+                    <span>Tiramisu</span>
+                    <span class="price">12$</span>
+                </div>  
+                <div class="item">
+                    <span>Chocolate Lava Cake</span>
+                    <span class="price">10$</span>
+                </div> 
+                <div class="item">
+                    <span>Cheesecake</span>
+                    <span class="price">4$</span>
+                </div> 
+                <div class="item">
+                    <span>Brownie with Ice Cream</span>
+                    <span class="price">7.65$</span>
+                </div> 
+                <div class="item">
+                    <span>Vanilla Panna Cotta</span>
+                    <span class="price">6$</span>
+                </div>               
+            </section>
+        </main>
+        <footer>
+            <p>Thank You For Visiting!</p>
+            <p>Open Daily • 10:00 AM to 11:00 PM</p>
+             <p>• Fresh Ingredients • Warm Hospitality</p>
+        </footer>
+    </div>
+</body>
+</html>
