@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Icecream Shop Menu</title>
+  <style>
+    body{
+      margin: 0;
+      padding-top: 120px;
+      font-family: Arial, sans-serif;
+    }
+    header{
+      position: fixed;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      height: 65px;
+      background:#fdf5ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+    .left-nav, .right-nav {
+      display: flex;
+      gap: 25px;
+      padding: 0 20px;
+    }
+    .logo{
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      animation: spin 20s linear infinite;
+      border: 5px solid #fcd096;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      20% { transform: rotate(180deg); }
+      50% { transform: rotate(270deg); }
+      80% { transform: rotate(360deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .logo-box {
+      margin: 0 70px;
+      transform: translate(20px,20px);
+    }
+    nav a {
+      padding: 10px 18px;
+      border-radius: 30px;
+      transition: 0.3s;
+      color: #444;
+    }
+    nav a:hover {
+      background-image: linear-gradient(to right, #ffee6f, #ff4f91);
+      color: #fff;
+    }
+    #home {
+      height: 100vh;
+      background: url('ice.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 0;
+    }
+    .overlay{
+      height: 100%;
+      width: 100%;
+      background: rgba(77, 72, 72, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #home h1 {
+      color: #fff;
+      font-size: 70px;
+      font-family:cursive;
+    }
+    #home p {
+      color: #fff;
+      font-size: 28px;
+    }
+    .btn{
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #f07373;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 40px;
+      transition: 0.3s;
+      font-size: 20px;
+      border: 2px solid #fff;
+    }
+    .btn:hover{
+      background-image: linear-gradient(to right, #ffee6f, #ff4f91);
+      transform: scale(1.08);
+    }
+    section{
+      margin: 0;
+      padding: 0;
+    }
+    menu{
+      margin: 0;
+      padding: 0;
+      margin-top: 0;
+    }
+    .floor{
+      background-image: url('floor.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .floor h1{
+      margin: 0;
+      font-size: 55px;
+      color: #de6d8b;
+      font-family: cursive;
+    }
+    .floor p{
+      margin: 0;
+      color: #de6d8b;
+      font-size: 30px;
+    }
+    .menu-content{
+      background-image: radial-gradient(rgb(235, 176, 133),white);
+      padding: 80px 60px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 35px;
+    }
+    .card{
+      width: 260px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow:0 8px 18px rgba(0,0,0,.15);
+      transition: .4s;
+    }
+    .card img{
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .card h2{
+      color:#ff4f91;
+      margin: 15px 0 10px;
+    }
+    .card p{
+      padding: 0 18px;
+      color: #666;
+      font-size: 15px;
+    }
+    .card span{
+      display: block;
+      margin: 15px 0;
+      font-size: 22px;
+      color:#7b3f00;
+      font-weight: bold;
+    }
+    .card button{
+      margin-bottom: 20px;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 30px;
+      background:#ff6ea8;
+      color: white;
+      cursor: pointer;
+      transition: .3s;
+    }
+    .card button:hover{
+      background:linear-gradient(to right,#ffee6f,#ff4f91);
+    }
+    .card:hover{
+      transform:translateY(-12px);
+      box-shadow:0 20px 35px rgba(0,0,0,.25);
+    }
+    .card:nth-child(6){
+      border:4px solid gold;
+      transform: scale(1.05);
+    }
+    .offer{
+      animation: glow 1.5s infinite alternate;
+      background-color: gold;
+    }
+    @keyframes glow{
+      from{
+        box-shadow: 0 0 5px gold;
+      }
+      to {
+        box-shadow: 0 0 20px orange;
+      }
+    }
+    #order{
+      background: url(floor.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 80px;
+      text-align: center;
+    }
+    #order h1{
+      color: #ff4f91;
+      font-size: 50px;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+    #order input,
+    #order select,
+    #order textarea,
+    #order button{
+      display: block;
+      margin: 15px auto;
+      width: 350px;
+      padding: 15px;
+      margin: 12px;
+      border-radius: 15px;
+       border:2px solid #ffd6e8;
+       font-size: 16px;
+    }
+    #order form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .toppings{
+      margin: 20px;
+    }
+    .toppings > label{
+      display: block;
+      margin: 10px auto;
+      color:#7b3f00;
+    }
+    #order button{
+      margin-top:20px;
+      padding:15px 40px;
+      border:none;
+      border-radius:40px;
+      background:#ff6ea8;
+      color:white;
+      cursor:pointer;
+      transition:.3s;
+    }
+    #order button:hover{
+      background:linear-gradient(to right,#ffee6f,#ff4f91);
+      transform:scale(1.08);
+    }
+    footer{
+      background-image: linear-gradient(to right, #ffee6f,#ff4f91);
+      color:white;
+      text-align:center;
+      padding:10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="left-nav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+    </nav>
+    <div class="logo-box">
+            <img src="logo.jpg" alt="Logo" class="logo">
+    </div>
+    <nav class="right-nav">
+      <a href="#order">Order Online</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+
+      <div class="overlay">
+        <h1>Welcome to Cone Heads</h1>
+        <p>🍦 Delicious Ice Cream for Everyone 🍨</p>
+        <a href="#menu" class="btn">Explore Menu 🍦</a>
+      </div>
+    </section>
+    <section id="menu">
+      <div class="floor">
+        <h1>Our Menu</h1>
+        <p>Check out our delicious ice cream flavors!</p>
+      </div>
+    </section>
+    <section class="menu-content">
+      <div class="card">
+        <img src="strawberry.jpg" alt="Strawberry">
+        <h2>Strawberry Delight</h2>
+        <p>A creamy strawberry ice cream made with fresh berries and swirls of sweet strawberry sauce.</p>
+        <span>Rs. 350</span>
+        <button>Order Now</button>
+      </div>
+      <div class="card">
+        <img src="chocolate.jpg" alt="chocolate">
+        <h2>Chocolate Chip</h2>
+        <p>Rich Belgian chocolate with crunchy chips.</p>
+        <span>Rs. 400</span>
+        <button>Order Now</button>
+      </div>
+      <div class="card">
+        <img src="cookie.jpg" alt="cookie">
+        <h2>Cookie Dough</h2>
+        <p>lassic vanilla ice cream packed with soft chocolate chip cookie dough chunks in every bite.</p>
+        <span>Rs. 450</span>
+        <button>Order Now</button>
+      </div>
+      <div class="card">
+        <img src="vanilla.jpg" alt="Vanilla">
+        <h2>Classic Vanilla Bean</h2>
+        <p> Smooth vanilla bean ice cream crafted with premium vanilla for a timeless favorite..</p>
+        <span>Rs. 300</span>
+        <button>Order Now</button>
+      </div>
+      <div class="card">
+        <img src="sprinkle.jpg" alt="Rainbow">
+        <h2>Rainbow Sprinkle Surprise</h2>
+        <p>Creamy vanilla ice cream topped with colorful sprinkles for a fun and cheerful dessert.</p>
+        <span>Rs. 380</span>
+        <button>Order Now</button>
+      </div>
+      <div class="card">
+        <p class="offer">🍒 Today's Special</p>
+        <img src="caramel.jpg" alt="Caramel">
+        <h2>Caramel Brownie Sundae</h2>
+        <p>Chocolate ice cream topped with warm brownie chunks, caramel drizzle, whipped cream, and a cherry.</p>
+        <span>Rs. 550</span>
+        <button>Order Now</button>
+      </div>
+    </section>
+    <section id="order">
+      <h1>🍦 Order Your Favorite Scoop</h1>
+      <p>Freshly prepared and delivered right to your doorstep.</p>
+      <form>
+        <input type="text" placeholder="Your Name">
+        <select>
+          <option>Strawberry Delight</option>
+          <option>Chocolate Chip</option>
+          <option>Cookie Dough</option>
+          <option>Classic Vanilla Bean</option>
+          <option>Rainbow Sprinkle Surprise</option>
+          <option>Caramel Brownie Sundae</option>
+        </select>
+        <input type="number" min="1" value="1">
+        <div class="toppings">
+        <label><input type="checkbox"> Sprinkles</label>
+        <label><input type="checkbox"> Chocolate Syrup</label>
+        <label><input type="checkbox"> Nuts</label>
+        </div>
+        <textarea placeholder="Delivery Address"></textarea>
+        <button>Place Order🍦</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <p>🍦 Cone Heads © 2026 | Made with ❤️ for Ice Cream Lovers</p>
+  </footer>
+</body>
+</html>
