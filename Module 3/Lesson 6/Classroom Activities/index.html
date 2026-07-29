@@ -18,9 +18,16 @@
             font-size: 1.5rem;
             color: white;
         }
+
+        .section {
+            text-align: center;
+            height: 500px;
+            padding-top: 100px;
+        }
     </style>
 </head>
-<body>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
     <div id="democarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#democarousel" data-slide-to="0" class="active"></li>
@@ -32,13 +39,34 @@
             <div class="carousel-item  bg-primary">🌊Ocean</div>
             <div class="carousel-item  bg-warning">🏜️ Desert</div>
         </div>
+        <a class="carousel-control-prev" href="#democarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#democarousel" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
     </div>
-    <a class="carousel-control-prev" href="#democarousel" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#democarousel" data-slide="prev">
-        <span class="carousel-control-next-icon"></span>
-    </a>
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <span class="navbar-brand">Safari</span>
+        <ul class="navbar-nav flex-row">
+            <li class="nav-item"><a class="nav-link mr-3" href="#forest">Forest</a></li>
+            <li class="nav-item"><a class="nav-link mr-3" href="#ocean">Ocean</a></li>
+            <li class="nav-item"><a class="nav-link mr-3" href="#desert">Desert</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div id="forest" class="section bg-light">
+            <h2>🌿Forest</h2>
+            <p>Explore tigers,elephants and monkeys!</p>
+        </div>
+        <div id="ocean" class="section bg-info">
+            <h2>🌊Ocean</h2>
+            <p>Meet sharks,dolphins and jellyfish ,orcas!</p>
+        </div>
+        <div id="desert" class="section bg-warning">
+            <h2>🏜️ Desert</h2>
+            <p>Spot camels , lizards and foxes!</p>
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
