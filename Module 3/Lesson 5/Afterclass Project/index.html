@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Ocean World</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    body{
+      background:linear-gradient(to bottom,#d7f3ff,#9ed8ff,#6fbbe8);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .navbar{
+      background:linear-gradient(to right,#00334d,#006994,#00a8cc);
+      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+    }
+    .navbar-brand , .nav-link{
+      color: white;
+    }
+    .nav-link:hover{
+      color: #d7f3ff;
+    }
+    .jumbotron{
+      margin: 30px auto;
+      border-radius: 20px;
+    }
+    .card{
+      transition:.4s;
+      border:none;
+      border-radius:20px;
+      overflow:hidden;
+      height: 100%;
+    }
+    .card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 12px 20px rgba(0,0,0,.25);
+    }
+    .card img{
+      height:220px;
+      object-fit:cover;
+    }
+    .card-body{
+      text-align: center;
+      padding: 25px;
+    }
+    .btn{
+      border-radius: 30px;
+      padding: 8px 22px;
+    }
+    .progress{
+      height: 28px;
+      margin-top: 15px;
+      border-radius: 15px;
+    }
+    .section-title{
+      color:#005b8f;
+      border-left:6px solid #00bfff;
+      padding-left:12px;
+      font-weight:bold;
+      margin-top:45px;
+      margin-bottom: 20px;
+    }
+    footer{
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm">
+    <a class="navbar-brand" href="#">Ocean World</a>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Sea Animals</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Coral Reefs</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="jumbotron text-center bg-info text-white rounded">
+    <h1>🌊 Welcome to My Ocean World 🐠</h1>
+    <p>Discover the beauty, mystery, and amazing creatures of the deep blue sea.</p>
+    <button class="btn btn-light text-primary">Explore the Ocean</button>
+  </div>
+  <div class="container py-5">
+    <h4 class="section-title">🌊 Exploring the Ocean... 🌊</h4>
+    <div class="spinner-border text-primary mr-2"></div>
+    <div class="spinner-border text-info mr-2"></div>
+    <div class="spinner-border text-success mr-2"></div>
+    <div class="spinner-border text-warning"></div>
+    <h4 class="section-title">🐠 Amazing Sea Animals 🐠</h4>
+    <div class="alert alert-info mt-4 mb-4">🌎 <strong>Ocean Fact:</strong> More than 70% of Earth's surface is covered by oceans!</div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="dophin.jpg" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">🐬 Dolphin<span class="badge badge-info">Smart</span></h4>
+            <p class="card-text">Dolphins are intelligent sea animals that love to swim in groups.</p>
+            <a class="btn btn-primary ml-2" href="#">Explore</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="turtle.jpg" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">🐢 Sea Turtle<span class="badge badge-danger">Endangered</span></h4>
+            <p class="card-text">Sea turtles travel across oceans and return to beaches to lay eggs.</p>
+            <a class="btn btn-success ml-2" href="#">Explore</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card">
+          <img src="octopus.jpg" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">🐙 Octopus<span class="badge badge-warning">Camouflage</span></h4>
+            <p class="card-text">Octopuses have eight arms and can hide by changing their color.</p>
+            <a class="btn btn-info ml-2" href="#">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h5 class="section-title">Ocean Exploration Progress</h5>
+    <div class="progress">
+      <div class="progress-bar bg-info" style="width:80%">80%</div>
+    </div>
+    <h4 class="section-title">Browse More Ocean Animals</h4>
+    <ul class="pagination justify-content-center mt-4">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </div>
+  <footer class="bg-dark text-white text-center p-3 mt-5">🌊 My Ocean World | Created with Bootstrap 💙</footer>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
