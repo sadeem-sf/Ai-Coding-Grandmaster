@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Jungle Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <style>
+    html{
+    scroll-behavior:smooth;
+  }
+    body{
+      position:relative;
+      font-family:'Poppins',sans-serif;
+    }
+    .jungle-slide{
+    position:relative;
+    height:200px;
+    color:white;
+    text-align:center;
+    padding-top:60px;
+    font-size:1.8em;
+  }
+  .jungle-slide::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+  }
+  .jungle-slide h2,
+  .jungle-slide p{
+    position:relative;
+    z-index:2;
+  }
+  .slide-rainforest{
+    background:url("forest.jpg");
+    background-size:cover;
+    background-position:center;
+  }
+  .slide-river{
+    background:url("river.jpg");
+    background-size:cover;
+    background-position:center;
+  }
+  .slide-night{
+    background:url("night.jpg");
+    background-size:cover;
+    background-position:center;
+  }
+  .card{
+    transition:.3s;
+  }
+  .card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 20px rgba(0,0,0,.3);
+  }
+  .navbar{
+    box-shadow:0 3px 10px rgba(0,0,0,.3);
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#jungleNav" data-offset="60">
+  <div class="jumbotron text-center bg-success text-white mb-0">
+    <h1>🌿 My Jungle Explorer</h1>
+    <p>Discover the Beauty of Nature</p>
+  </div>
+  <div id="jungleCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#jungleCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#jungleCarousel" data-slide-to="1"></li>
+      <li data-target="#jungleCarousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active jungle-slide slide-rainforest">
+        <h2>🌿 Rainforest Adventure</h2>
+        <p>Experience the world's greenest forests.</p>
+      </div>
+      <div class="carousel-item jungle-slide slide-night">
+        <h2>🌙 Night Jungle Safari</h2>
+        <p>Experience the world's greenest forests.</p>
+      </div>
+      <div class="carousel-item jungle-slide slide-river">
+        <h2>🐊 Jungle River Journey</h2>
+        <p>Experience the world's greenest forests.</p>
+      </div>
+      <a class="carousel-control-prev" href="#jungleCarousel" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#jungleCarousel" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+    </div>
+  </div>
+  <nav id="jungleNav" class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
+    <span class="navbar-brand">🌿Jungle Explorer</span>
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#rainforest">Rainforest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#night">Night Safari</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#river">River Journey</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container mt-4">
+    <div id="rainforest" class="card shadow p-4 mb-4">
+      <img src="forest.jpg" class="img-fluid rounded mb-3">
+      <h2>🌿 Rainforest Adventure</h2>
+      <p>Experience the world's greenest forests.</p>
+    </div>
+    <div id="night" class="card shadow p-4 mb-4">
+      <img src="night.jpg" class="img-fluid rounded mb-3">
+      <h2>🌙 Night Jungle Safari</h2>
+      <p>Experience the world's greenest forests.</p>
+    </div>
+    <div id="river" class="card shadow p-4 mb-4">
+      <img src="river.jpg" class="img-fluid rounded mb-3">
+      <h2>🐊 Jungle River Journey</h2>
+      <p>Experience the world's greenest forests.</p>
+    </div>
+    <div class="card shadow p-4 mb-4">
+      <img src="birds.jpg" class="img-fluid rounded mb-3">
+      <h2>🦜 Birds of the Jungle</h2>
+      <p>Discover the diverse bird species that call the jungle home.</p>
+    </div>
+    <div class="card shadow p-4 mb-4">
+      <img src="wildlife.jpg" class="img-fluid rounded mb-3">
+      <h2>🐒 Jungle Wildlife</h2>
+      <p>Learn about the fascinating wildlife that inhabits the jungle.</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
