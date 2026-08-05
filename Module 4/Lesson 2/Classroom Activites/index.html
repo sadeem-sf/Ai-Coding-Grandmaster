@@ -6,12 +6,18 @@
     <title>Function Example</title>
 </head>
 <body>
-    <p id="abc"></p>
+    <p id="global"></p>
+    <p id="local"></p>
+    <p id="after"></p>
     <script>
+        let sum = 5;
+        document.getElementById("global").innerHTML = "Global:" + sum;
         function addition(num1,num2){
-            return num1 + num2;
+            let sum = num1 + num2;
+            document.getElementById("local").innerHTML = "Local:" + sum;
         }
-        document.getElementById("abc").innerHTML = addition(7,2);
+        addition(6,2);
+        document.getElementById("after").innerHTML = "Global:" + sum;
     </script>
 </body>
 </html>
