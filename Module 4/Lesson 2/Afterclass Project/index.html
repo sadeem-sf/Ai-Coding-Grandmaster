@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to right, #e0c4ff, #dae7ff);
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .calculator {
+            width: 400px;
+            margin: auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .calculator h1 {
+            margin-bottom: 30px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 2px solid #b8c1ec;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #f3baee;
+            color: white;
+        }
+
+        button:hover {
+            background: #fc8ef3;
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <h1>🧮Multiplication Calculator</h1>
+        <label>First Number:</label>
+        <input type="number" id="num1">
+        <br><br>
+        <label>Second Number:</label>
+        <input type="number" id="num2">
+        <br><br>
+        <button onclick="calculate()">Multiply</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculate() {
+            let firstNumber = Number(document.getElementById("num1").value);
+            let secondNumber = Number(document.getElementById("num2").value);
+            let answer = multiply(firstNumber, secondNumber);
+            document.getElementById("result").innerHTML = answer;
+        }
+        function multiply(a, b) {
+            return a * b;
+        }
+    </script>
+</body>
+
+</html>
