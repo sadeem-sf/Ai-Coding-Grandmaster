@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favourite Person Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #ddf0f8, #5ebff8);
+      min-height: 100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: .4s;
+    }
+
+    .main-title {
+      font-weight: bold;
+      color: #0c395f;
+    }
+
+    .subtitle {
+      color: #777;
+    }
+
+    .profile-card {
+      max-width: 500px;
+      margin: auto;
+      border: none;
+      border-radius: 25px;
+      overflow: hidden;
+      transition: .4s;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .profile-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .profile-header {
+      background: linear-gradient(135deg, #1ceff3, #fdff75);
+      color: white;
+      padding: 35px 20px;
+      text-align: center;
+    }
+
+    .profile-icon {
+      width: 110px;
+      height: 110px;
+      background: white;
+      color: #ff5a43;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 55px;
+      margin: auto;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .info-box {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 12px;
+      margin-bottom: 12px;
+      transition: 0.3s;
+    }
+
+    .info-box:hover {
+      transform: scale(1.02);
+      background: #f7f8e8;
+    }
+
+    .info-label {
+      font-size: 11px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-value {
+      font-size: 17px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .quote-box {
+      background: #edfeff;
+      border-left: 5px solid #000e5a;
+      padding: 15px;
+      border-radius: 10px;
+      font-style: italic;
+    }
+
+    .custom-btn {
+      background: #1ceff3;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 18px;
+      transition: 0.3s;
+    }
+
+    .custom-btn:hover {
+      background: #f8ff77;
+      transform: scale(1.05);
+      color: #0c395f;
+    }
+
+    #funfact {
+      display: none;
+      background: #fbf5d9;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 15px;
+      animation: fadeIn 0.5s;
+    }
+
+    body.dark-mode #funfact {
+      background: #eee5bd;
+      color: #333;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .code-box {
+      max-width: 500px;
+      margin: 25px auto;
+    }
+
+    pre {
+      font-size: 13px;
+      white-space: pre-wrap;
+    }
+
+    body.dark-mode {
+      background: linear-gradient(135deg, #151515, #292929);
+      color: white;
+    }
+
+    body.dark-mode .profile-card {
+      background: #222;
+    }
+
+    body.dark-mode .info-box {
+      background: #333;
+    }
+
+    body.dark-mode .info-value {
+      color: white;
+    }
+
+    body.dark-mode .subtitle {
+      color: #bbb;
+    }
+
+    body.dark-mode .quote-box {
+      background: #333;
+    }
+
+    body.dark-mode .code-box {
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h1 class="main-title">⭐ My Favourite Person</h1>
+      <p class="subtitle">My favourite person is none other than my little brother!</p>
+    </div>
+  </div>
+  <div class="card profile-card">
+    <div class="profile-header">
+      <div class="profile-icon">👦🏻</div>
+      <h2 class="mt-3 mb-1" id="name"></h2>
+      <p id="relationship"></p>
+    </div>
+    <div class="card-body p-4">
+      <div class="info-box">
+        <div class="info-label">⚽ Favourite Activity</div>
+        <div class="info-value" id="activity"> -</div>
+      </div>
+      <div class="info-box">
+        <div class="info-label">📍 City</div>
+        <div class="info-value" id="city"> -</div>
+      </div>
+      <div class="info-box">
+        <div class="info-label">🎨 Favourite Color</div>
+        <div class="info-value" id="color"> -</div>
+      </div>
+      <div class="info-box">
+        <div class="info-label">🎯 Hobby</div>
+        <div class="info-value" id="hobby"> -</div>
+      </div>
+      <div class="quote-box mt-3">
+        💬<span id="quote"></span>
+      </div>
+      <div class="text-center mt-4">
+        <button class="custom-btn me-2" onclick="showFunFact()">❤️ Fun Fact</button>
+        <button class="custom-btn me-2" onclick="toggleDarkMode()">🌙 Theme</button>
+      </div>
+      <div id="funfact">
+        💡 <strong>Fun Fact:</strong>
+        <span id="factText"></span>
+      </div>
+    </div>
+  </div>
+  <div class="card shadow-sm code-box">
+    <div class="card-body">
+      <h5 style="color:#2086bd;">💻 JavaScript Object Used</h5>
+      <pre id="codeDisplay" class="bg-light p-3 rounded border"></pre>
+    </div>
+  </div>
+  <script>
+    var favouritePerson = {
+      name: "Muhammad Muwahid",
+      relationship: "My Brother",
+      activity: "Playing Football",
+      city: "Islamabad",
+      age: 13,
+      hobby: "Football",
+      favouriteColor: "Blue",
+      quote: "Always keep smiling!",
+      funFact: "He can play football for hours without getting tired!"
+    };
+    var nameEl = document.getElementById("name");
+    var relationshipEl = document.getElementById("relationship");
+    var activityEl = document.getElementById("activity");
+    var cityEl = document.getElementById("city");
+    var colorEl = document.getElementById("color");
+    var hobbyEl = document.getElementById("hobby");
+    var quoteEl = document.getElementById("quote");
+    var factEl = document.getElementById("factText");
+    nameEl.textContent = favouritePerson.name;
+    relationshipEl.textContent = favouritePerson.relationship;
+    activityEl.textContent = favouritePerson.activity;
+    cityEl.textContent = favouritePerson.city;
+    colorEl.textContent = favouritePerson["favouriteColor"];
+    hobbyEl.textContent = favouritePerson["hobby"];
+    quoteEl.textContent = favouritePerson["quote"];
+    factEl.textContent = favouritePerson["funFact"];
+    var codeEl = document.getElementById("codeDisplay");
+    codeEl.textContent =
+      'var favouritePerson = {\n' +
+      '    name: "' + favouritePerson.name + '",\n' +
+      '    relationship: "' + favouritePerson.relationship + '",\n' +
+      '    activity: "' + favouritePerson.activity + '",\n' +
+      '    city: "' + favouritePerson.city + '",\n' +
+      '    age: ' + favouritePerson.age + ',\n' +
+      '    hobby: "' + favouritePerson.hobby + '",\n' +
+      '    favouriteColor: "' + favouritePerson.favouriteColor + '"\n' +
+      '};';
+    function showFunFact() {
+      var fact = document.getElementById("funfact");
+
+      if (fact.style.display === "block") {
+        fact.style.display = "none";
+      } else {
+        fact.style.display = "block";
+      }
+    }
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+
+</html>
