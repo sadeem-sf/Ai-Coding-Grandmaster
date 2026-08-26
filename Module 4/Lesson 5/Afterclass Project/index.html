@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Objects & Arrays</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(135deg, #e8d5ff, #d8f3ff);
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            color: #6a1b9a;
+            font-size: 45px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(106, 27, 154, 0.35);
+        }
+
+        h2 {
+            color: #444;
+            font-size: 22px;
+            margin-top: 0;
+        }
+
+        .profile-card {
+            background: white;
+            width: 350px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card h2 {
+            color: #6a1b9a;
+            margin-bottom: 20px;
+        }
+
+        .profile-card p {
+            font-size: 18px;
+            padding: 8px;
+            margin: 5px;
+            background: #f5edff;
+            border-radius: 10px;
+        }
+
+        .colors-card {
+            background: white;
+            width: 350px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .colors-card h3 {
+            color: #6a1b9a;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .colors-card p {
+            font-size: 18px;
+            padding: 10px;
+            margin: 8px;
+            background: #f5edff;
+            border-radius: 10px;
+        }
+
+        .methods-card {
+            background: white;
+            width: 350px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(106, 27, 154, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .methods-card h3 {
+            color: #6a1b9a;
+            margin-top: 15px;
+        }
+
+        .result {
+            background: #f5edff;
+            padding: 15px;
+            border-radius: 12px;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .profile-card:hover,
+        .colors-card:hover,
+        .methods-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(106, 27, 154, 0.35);
+        }
+
+        .purple {
+            background: #eadcff !important;
+            color: #6a1b9a;
+        }
+
+        .blue {
+            background: #dceeff !important;
+            color: #1565c0;
+        }
+
+        .pink {
+            background: #ffe0ef !important;
+            color: #d81b60;
+        }
+
+        .white {
+            background: #f8f8f8 !important;
+            color: #555;
+            border: 1px solid #ddd;
+        }
+
+        .black {
+            background: #e5e5e5 !important;
+            color: #222;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            color: #6a1b9a;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🌈 My Profile</h1>
+    <h2>JavaScript Objects & Arrays</h2>
+
+    <script>
+        var student = {
+            name: "Ayla",
+            age: 14,
+            grade: 9,
+            hobby: "Coding",
+            favSport: "Badminton"
+        };
+
+        document.write("<div class='profile-card'>");
+
+        document.write("<h2>👩‍💻 Student Profile</h2>");
+
+        document.write("<p><strong>Name:</strong> " + student.name + "</p>");
+        document.write("<p><strong>Age:</strong> " + student.age + "</p>");
+        document.write("<p><strong>Grade:</strong> " + student.grade + "</p>");
+        document.write("<p><strong>Hobby:</strong> " + student.hobby + "</p>");
+        document.write("<p><strong>Favourite Sport:</strong> " + student.favSport + "</p>");
+
+        document.write("</div>");
+
+        var colors = ["Purple", "Blue", "Pink", "White", "Black"];
+
+        document.write("<div class='colors-card'>");
+
+        document.write("<h3>🌈 My Favourite Colors!</h3>");
+
+        document.write("<p class='purple'>💜 Color 1: " + colors[0] + "</p>");
+        document.write("<p class='blue'>💙 Color 2: " + colors[1] + "</p>");
+        document.write("<p class='pink'>🩷 Color 3: " + colors[2] + "</p>");
+        document.write("<p class='white'>🤍 Color 4: " + colors[3] + "</p>");
+        document.write("<p class='black'>🖤 Color 5: " + colors[4] + "</p>");
+
+        document.write("</div>");
+
+        document.write("<div class='methods-card'>");
+
+        document.write("<h3>🔗 Colors Using join()</h3>");
+        document.write("<p class='result'>" + colors.join(" • ") + "</p>");
+
+        document.write("<h3>✂️ After Using pop()</h3>");
+
+        colors.pop();
+
+        document.write("<p class='result'>" + colors.join(" • ") + "</p>");
+
+        document.write("</div>");
+    </script>
+
+    <footer>
+        <p>💻 Created with JavaScript Objects & Arrays</p>
+        <p>✨ My Profile Project</p>
+    </footer>
+
+</body>
+
+</html>
