@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Digital Zoo Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f5;
+      text-align: center;
+      color: #222;
+    }
+
+    h1 {
+      color: #1b4332;
+      margin-top: 30px;
+    }
+
+    #zoo {
+      width: 500px;
+      margin: 25px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 18px;
+      border: 2px solid #1b4332;
+    }
+
+    .zone {
+      border: 2px solid;
+      border-radius: 14px;
+      padding: 15px;
+      margin: 12px 0;
+      text-align: left;
+    }
+
+    #lionZone {
+      border-color: #d97706;
+      background-color: #fff7ed;
+    }
+
+    #elephantZone {
+      border-color: #2563eb;
+      background-color: #eff6ff;
+    }
+
+    #pandaZone {
+      border-color: #6b21a8;
+      background-color: #faf5ff;
+    }
+
+    #output {
+      width: 500px;
+      margin: 20px auto;
+      padding: 18px;
+      background-color: white;
+      border: 2px dashed #1b4332;
+      border-radius: 14px;
+      text-align: left;
+      line-height: 1.7;
+    }
+
+    button {
+      background-color: #1b4332;
+      color: white;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #2d6a4f;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Digital Zoo Manager</h1>
+  <p>Use JavaScript and the DOM to explore animals, zones, parent nodes, child nodes, and sibling nodes.</p>
+  <div id="zoo">
+    <div id="lionZone" class="zone">
+      <h2>🦁 Lion Zone</h2>
+      <p>Animal: <span>Lion</span></p>
+    </div>
+    <div id="elephantZone" class="zone">
+      <h2>🐘 Elephant Zone</h2>
+      <p>Animal: <span>Elephant</span></p>
+    </div>
+    <div id="pandaZone" class="zone">
+      <h2>🐼 Panda Zone</h2>
+      <p>Animal: <span>Panda</span></p>
+    </div>
+  </div>
+  <button onclick="manageZoo()">Manage Zoo</button>
+  <div id="output">Zoo information will appear here.</div>
+  <script>
+    function manageZoo() {
+      let zoo = document.getElementById("zoo");
+      let lionZone = document.getElementById("lionZone");
+      let elephantZone = document.getElementById("elephantZone");
+      let pandaZone = document.getElementById("pandaZone");
+      let parentNodeName = lionZone.parentNode.id;
+      let firstChildZone = zoo.children[0].id;
+      let secondChildZone = zoo.children[1].id;
+      let nextSiblingZone = lionZone.nextElementSibling.id;
+      let previousSiblingZone = pandaZone.previousElementSibling.id;
+      let elementNodeType = lionZone.nodeType;
+      let textNodeType = lionZone.firstChild.nodeType;
+      lionZone.style.backgroundColor = "#fff3cd";
+      elephantZone.style.backgroundColor = "#d1ecf1";
+      pandaZone.style.backgroundColor = "#f8d7da";
+      lionZone.querySelector("h2").innerHTML = "Updated Lion Zone";
+      elephantZone.querySelector("h2").innerHTML = "Updated Elephant Zone";
+      pandaZone.querySelector("h2").innerHTML = "Updated Panda Zone";
+      output.innerHTML =
+        "<strong>DOM Tree Information:</strong><br>" +
+        "Parent of Lion Zone: " + parentNodeName + "<br>" +
+        "First child of Zoo: " + firstChildZone + "<br>" +
+        "Second child of Zoo: " + secondChildZone + "<br><br>" +
+
+        "<strong>Sibling Node Information:</strong><br>" +
+        "Next sibling of Lion Zone: " + nextSiblingZone + "<br>" +
+        "Previous sibling of Panda Zone: " + previousSiblingZone + "<br><br>" +
+
+        "<strong>Types of Nodes:</strong><br>" +
+        "Lion Zone element node type: " + elementNodeType + "<br>" +
+        "Lion Zone first child node type: " + textNodeType + "<br><br>" +
+
+        "<strong>DOM Update:</strong><br>" +
+        "The animal zone headings and background colours were updated using JavaScript.";
+    }
+  </script>
+</body>
+
+</html>
