@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Daily Planner</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #151522;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #24243a;
+            color: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .header p {
+            color: #c8c8d8;
+            margin: 0;
+        }
+
+        .card {
+            border: none;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-title {
+            color: #5f3dc4;
+            font-weight: bold;
+        }
+
+        .box {
+            background-color: #f5f5f8;
+            color: #333;
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .btn-primary {
+            background-color: #6f42c1;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .btn-primary:hover {
+            background-color: #59339d;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container py-4">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>My Daily Planner</h1>
+            <p>Plan your tasks and manage your time</p>
+        </div>
+
+
+        <!-- Daily Tasks -->
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="card-title">📋 Daily Tasks</h3>
+
+                <button class="btn btn-primary mr-2" onclick="sortAZ()">
+                    Sort A to Z
+                </button>
+
+                <button class="btn btn-primary" onclick="sortZA()">
+                    Sort Z to A
+                </button>
+
+                <div id="taskResult" class="box mt-3"></div>
+
+            </div>
+        </div>
+
+
+        <!-- Task Time -->
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="card-title">⏱ Task Time</h3>
+
+                <button class="btn btn-primary mr-2" onclick="sortShortest()">
+                    Shortest First
+                </button>
+
+                <button class="btn btn-primary" onclick="sortLongest()">
+                    Longest First
+                </button>
+
+                <div id="timeResult" class="box mt-3"></div>
+
+            </div>
+        </div>
+
+
+        <!-- Labels -->
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="card-title">🏷 Time Labels</h3>
+
+                <button class="btn btn-primary" onclick="addLabel()">
+                    Add Minutes Label
+                </button>
+
+                <div id="labelResult" class="box mt-3"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Our task list
+        var tasks = [
+            "Homework",
+            "Breakfast",
+            "Exercise",
+            "Reading",
+            "Packing Bag"
+        ];
+
+        // Time needed for each task
+        var minutes = [30, 15, 20, 25, 10];
+
+
+        // Show the original arrays
+        document.getElementById("taskResult").innerHTML =
+            "Tasks: " + tasks;
+
+        document.getElementById("timeResult").innerHTML =
+            "Minutes needed: " + minutes;
+
+        document.getElementById("labelResult").innerHTML =
+            "Press the button above!";
+
+
+        // Sort tasks A to Z
+        function sortAZ() {
+
+            tasks.sort();
+
+            document.getElementById("taskResult").innerHTML =
+                "A to Z: " + tasks;
+        }
+
+
+        // Sort tasks Z to A
+        function sortZA() {
+
+            tasks.sort();
+            tasks.reverse();
+
+            document.getElementById("taskResult").innerHTML =
+                "Z to A: " + tasks;
+        }
+
+
+        // Sort time from shortest to longest
+        function sortShortest() {
+
+            minutes.sort(function (a, b) {
+                return a - b;
+            });
+
+            document.getElementById("timeResult").innerHTML =
+                "Shortest tasks first: " + minutes;
+        }
+
+
+        // Sort time from longest to shortest
+        function sortLongest() {
+
+            minutes.sort(function (a, b) {
+                return b - a;
+            });
+
+            document.getElementById("timeResult").innerHTML =
+                "Longest tasks first: " + minutes;
+        }
+
+
+        // Add "minutes" to every number
+        function addLabel() {
+
+            var labelledMinutes = minutes.map(function (time) {
+                return time + " minutes";
+            });
+
+            document.getElementById("labelResult").innerHTML =
+                "Labelled times: " + labelledMinutes;
+        }
+
+    </script>
+
+</body>
+
+</html>

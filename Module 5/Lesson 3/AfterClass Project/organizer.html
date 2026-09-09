@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>My Daily Planner</title>
+    <style>
+        body{
+            background: rgb(196, 195, 195);
+        }
+        .header{
+            background-image: linear-gradient(to right,rgb(17, 17, 55),lightblue);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            box-shadow: 4px 3px  #f5f5f6;
+        }
+        header h1{
+            font-weight: bold;
+        }
+        header p{
+            color: #c8c8d8;
+        }
+        .card{
+            border: none;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-4">
+        <div class="header">
+            <h1>My Daily Planner</h1>
+            <p class="lead">Plan your tasks and manage your time</p>
+        </div>
+        <div class="card my-3">
+            <div class="card-body">
+                <h3 class="card-title">📋 <b style="font-family:Georgia, 'Times New Roman', Times, serif;">Daily Tasks</b></h3>
+                <button class="btn btn-danger mr-2" onclick="sortAZ()">Sort A to Z</button>
+                <button class="btn btn-warning mr-2" onclick="sortZA()">Sort Z to A</button>
+                <p id="taskResult" class="box mt-3"></p>
+            </div>
+        </div>
+        <div class="card my-3">
+            <div class="card-body">
+                <h3 class="card-title">⏱ <b style="font-family: Georgia, 'Times New Roman', Times, serif;">Task Time</b></h3>
+                <button class="btn btn-info mr-2" onclick="sortShortest()">Shortest Time</button>
+                <button class="btn btn-primary mr-2" onclick="sortLongest()">Longest Time</button>
+                <p id="timeResult" class="box mt-3"></p>
+            </div>
+        </div>
+        <div class="card my-3">
+            <div class="card-body">
+                <h3 class="card-title">🏷 <b style="font-family: Georgia, 'Times New Roman', Times, serif;">Time Label</b></h3>
+                <button class="btn btn-success mr-2" onclick="addLabel()">Add Minutes <Label></Label></button>
+                <p id="labelResult" class="box mt-3"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tasks = ['Homework','Exercise','Breakfast','Reading','Packing Bag'];
+        var minutes = [30,25,15,20,10];
+        document.getElementById("taskResult").innerHTML= "Tasks: " + tasks;
+        document.getElementById("timeResult").innerHTML= "Minutes needed: " + minutes;
+        document.getElementById("labelResult").innerHTML= "Press the button above!";
+        function sortAZ(){
+            tasks.sort();
+            document.getElementById("taskResult").innerHTML= "<i>A to Z:</i> " + tasks.join(" , ");
+        }
+        function sortZA(){
+            tasks.sort();
+            tasks.reverse();
+            document.getElementById("taskResult").innerHTML= "<i>Z to A:</i> " + tasks.join(" , ");
+        }
+        function sortShortest(){
+            minutes.sort(function(a,b){
+                return a - b;
+            });
+            document.getElementById("timeResult").innerHTML= "<i>Shortest task that can be finished first:</i> " + minutes.join(" , ");
+        }
+        function sortLongest(){
+            minutes.sort(function(a,b){
+                return b - a;
+            });
+            document.getElementById("timeResult").innerHTML= "<i>Longest task that need to  be done:</i> " + minutes.join(" , ");
+        }
+        function addLabel(){
+            var labelledMinutes = minutes.map(function(c){
+                return c + "minutes";
+            });
+            document.getElementById("labelResult").innerHTML= "<i>Labelled Times:</i> " + labelledMinutes.join(" , ");
+        }
+    </script>
+</body>
+
+</html>
