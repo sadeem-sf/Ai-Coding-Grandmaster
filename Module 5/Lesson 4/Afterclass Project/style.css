@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #fff7fb, #eef8ff, #f1fff5);
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 45px 0;
+    margin: auto;
+    max-width: 1100px;
+    width: 90%;
+}
+
+h1 {
+    color: #c05a88;
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 1px;
+}
+
+.container>p {
+    text-align: center;
+    color: #78909c;
+    font-size: 17px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.94);
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 22px;
+    border: 1px solid #e8dce5;
+    box-shadow: 0 8px 22px rgba(130, 150, 170, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "🌸";
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    font-size: 30px;
+    color: #e9a9c5;
+}
+
+.card::after {
+    content: "❀";
+    position: absolute;
+    bottom: 8px;
+    left: 20px;
+    font-size: 25px;
+    color: #a8d8c0;
+}
+
+.card h2 {
+    color: #668fa3;
+    margin-bottom: 15px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+}
+
+.card p {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+button {
+    background: linear-gradient(135deg, #d986aa, #9bc9d8);
+    border: none;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #c66f98, #82b9ca);
+    transform: translateY(-2px);
+}
+
+#replaceResult,
+#errorResult,
+#caseResult,
+#countResult,
+#convertResult,
+#typeResult {
+    background: linear-gradient(135deg, #fff8fb, #f4fbff);
+    margin-top: 22px;
+    padding: 16px;
+    border-radius: 12px;
+    border-left: 4px solid #d99bb8;
+    color: #69535e;
+    line-height: 1.7;
+}
